@@ -12,4 +12,41 @@ code {
     monospace;
 }
 
+.cart{
+  color:rgb(125, 228, 231);
+  width: 50vw;
+  height: 100%;
+  border:1px solid black;
+  display:flex;
+  flex: 1 1 auto;
+  /* flex-direction: column; */
+  margin: 10px;
+}
 
+.products{
+  color:rgb(238, 192, 123);
+  width: 50vw;
+  height: 100%;
+  border:1px solid black;
+  display:flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.main{
+  display:flex;
+  flex: 1 1 auto;
+}
+
+.CartItem{
+
+}
+
+.footer{
+
+}
+
+.product{
+  
+}
