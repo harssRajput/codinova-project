@@ -26,14 +26,29 @@ code {
 }
 
 .products{
-  color:rgb(238, 192, 123);
+  background-color:rgb(216, 239, 245);
   width: 50vw;
   height: 100%;
+  min-height: 500px;
   border:1px solid black;
   display:flex;
+  align-content: flex-start;
   flex: 0 0 auto;
   flex-wrap: wrap;
   margin: 10px;
+  margin: 10px;
+  border-radius: 25px;
+  box-shadow: rgb(155, 158, 160) 0 10px 10px 5px, inset rgb(217, 224, 224) 0 10px 10px 3px;
+}
+
+.product{
+  color: rgb(221, 28, 28);
+  background-color: black;
+  height: 90px;
+  width: 90px;
+  margin: 8px;
+  border-radius: 8px;
+  box-shadow: rgb(233, 225, 225) 0 0 3px, inset rgb(156, 156, 156) 0 0 3px;
 }
 
 .main{
@@ -55,10 +70,6 @@ code {
   padding: 15px 0 ;
   width: 95%;
   margin: auto;
-}
-
-.cart-header .products{
-  margin-left: 3px;
 }
 
 .cart-header .total{
@@ -127,6 +138,4 @@ table tbody tr td:first-child{
   width: 40%;
 }
 
-.product{
 
-}

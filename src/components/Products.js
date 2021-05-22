@@ -1,8 +1,22 @@
+import Product from './Product';
 
 function Products() {
     return (
       <div className="products">
-        this is products
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
       </div>
     );
   }
