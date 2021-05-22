@@ -13,14 +13,16 @@ code {
 }
 
 .cart{
-  color:rgb(72, 76, 77);
+  background-color:rgb(216, 212, 212);
   width: 50vw;
   height: 100%;
-  border:1px solid black;
+  /* border:1px solid black; */
   display:flex;
   flex: 1 1 auto;
   flex-direction: column;
   margin: 10px;
+  border-radius: 25px;
+  box-shadow: rgb(155, 158, 160) 0 10px 10px 5px, inset rgb(217, 224, 224) 0 10px 10px 3px;
 }
 
 .products{
@@ -39,9 +41,20 @@ code {
   flex: 1 1 auto;
 }
 
+.cart .items{
+  min-height: 300px;
+}
+
+.cart div span:first-child{
+  margin-left: 10%;
+}
+
 .cart-header{
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
+  padding: 15px 0 ;
+  width: 95%;
+  margin: auto;
 }
 
 .cart-header .products{
@@ -52,22 +65,67 @@ code {
   margin-right: 3px;
 }
 
-.CartItem{
+.cart-item{
+  background-color: rgb(248, 248, 248);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0 ;
+  width: 95%;
+  /* border: 1px solid black; */
+  margin: auto;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  box-shadow: rgb(233, 225, 225) 0 0 3px, inset rgb(156, 156, 156) 0 0 3px;
+}
 
+.cart-item div > span{
+  padding: 5px;
 }
+
+.cart-item  button{
+  padding: 2px 5px;
+}
+
+.cart-item > button {
+  align-self: flex-start;
+}
+
 .footer td{
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+  margin: 0 auto;
+  box-shadow: rgb(255, 255, 255) 0 0 1px, inset rgb(156, 156, 156) 0 0 1px;
 }
-/* 
-.footer .footer-child .left{
-  margin-left: 1%;
-  margin-right: 34%;
-  text-align: left;
+
+.footer tfoot tr td{
+  /* border: 1px solid black; */
+  background-color:rgb(216, 212, 212);
+  border-radius: 5px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin: 0 auto;
+  box-shadow: rgb(255, 255, 255) 0 0 1px, inset rgb(156, 156, 156) 0 0 1px;
+}
+
+.footer button {
+  margin: 0 20%;
+  padding: 5px;
+  width:60%;
+}
+
+.footer .buttons td{
+  padding: 5px 0 ;
 }
 
 .footer .footer-child .right{
-  text-align: right;
-} */
+  display:flex;
+  justify-content:space-between;
+} 
+
+table tbody tr td:first-child{
+  width: 40%;
+}
 
 .product{
 

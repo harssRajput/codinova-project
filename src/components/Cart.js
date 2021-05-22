@@ -5,12 +5,14 @@ function Cart() {
   return (
     <div className="cart">
       <div className="cart-header">
-        <span className="products">PRODUCTS</span>
-        <span className="price">PRICE</span>
-        <span className="quantity">QUANTITY</span>
-        <span className="total">TOTAL</span>
+        <span>PRODUCTS</span>
+        <span>PRICE</span>
+        <span>QUANTITY</span>
+        <span>TOTAL</span>
       </div>
-      <CartItem />
+      <div className="items">
+        <CartItem />
+      </div>
       <Footer />
     </div>
   );
