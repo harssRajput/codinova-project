@@ -10,32 +10,49 @@ class Cart extends React.Component {
     // console.log("inside constructor");
     this.state = {
       products: dataset.map((data) => {
-        return data;
+        let newData = data;
+        newData["qty"] = 1;
+        return newData;
       }),
     };
-    // {
-    //   name: "comuter",
-    //   price: 130,
-    //   category: "computers",
-    //   description: ""
-    // },
-    // {
-    //   "name": "sweater",
-    //   "price": "1",
-    //   "category": "Clothing",
-    //   "description": "fashion, clothes , sweater, wool, cardigan,…"
-    // },
-    // {
-    //   "name": "tie",
-    //   "price": "46",
-    //   "category": "Clothing",
-    //   "description": "fashion, tie, clothes, accessory , accessoire,…"
-    // }
-    // }
   }
 
+  handleIncreaseQuantity = (product) => {
+    // console.log("it's working");
+    const index = this.state.products.indexOf(product);
+    this.state.products[index].qty++;
+
+    this.setState({
+      products: this.state.products,
+    });
+  };
+  handleDecreaseQuantity = (product) => {
+    // console.log("it's working");
+    const index = this.state.products.indexOf(product);
+
+    if (this.state.products[index].qty === 0) {
+      return;
+    }
+
+    this.state.products[index].qty--;
+
+    this.setState({
+      products: this.state.products,
+    });
+  };
+  handleDeleteItem = (prdt) => {
+    const item = this.state.products.filter((product) => {
+      return prdt !== product;
+    });
+
+    // console.log("it's working", item);
+    this.setState({
+      products: item,
+    });
+  };
+
   render() {
-    // console.log("products ", typeof(this.state));
+    console.log("products ", this.state);
     const { products } = this.state;
     return (
       <div className="cart">
@@ -73,9 +90,9 @@ class Cart extends React.Component {
                   <CartItem
                     product={product}
                     key={index}
-                    // onIncreaseQuantity={onIncreaseQuantity}
-                    // onDecreaseQuantity={onDecreaseQuantity}
-                    // onDeleteItem={onDeleteItem}
+                    onIncreaseQuantity={this.handleIncreaseQuantity}
+                    onDecreaseQuantity={this.handleDecreaseQuantity}
+                    onDeleteItem={this.handleDeleteItem}
                   />
                 );
               })}
