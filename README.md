@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Create React project of codinova
+
+it's a POS app where user can pick item, increase or decrease quantity and delete item. in last, user can process the recipt.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
