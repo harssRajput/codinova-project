@@ -1,16 +1,27 @@
-function CartItem() {
+function CartItem(props) {
+  const { name, price } = props.product;
   return (
-    <div className="cart-item">
+    <tr className="cart-item">
+      <td>
         <button>x</button>
-        <span>PRODUCT</span>
-        <span>PRICE</span>
+      </td>
+      <td>
+        <span>{name}</span>
+      </td>
+      <td>
+        <span>{price}</span>
+      </td>
+      <td>
         <div>
           <button>-</button>
           <span>1</span>
           <button>+</button>
         </div>
+      </td>
+      <td>
         <span className="total">TOTAL</span>
-    </div>
+      </td>
+    </tr>
   );
 }
 
