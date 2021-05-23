@@ -127,6 +127,33 @@ code {
   margin-left: 10px;
 }
 
+.cart-item td:nth-of-type(1) button {
+  background-color: rgb(255, 34, 34);
+  color: aliceblue;
+  border: none;
+  width: 25px;
+  border-radius: 40%;
+  font: bolder;
+  transition: all 0.3s ease;
+}
+
+.cart-item td div button {
+  background-color: rgb(156, 159, 163);
+  color: aliceblue;
+  border: none;
+  font: bolder;
+  height: 22px;
+  width: 22px;
+  transition: all 0.3s ease;
+}
+
+.cart-item button:hover{
+  box-shadow: rgb(78, 5, 121) 0 0 5px;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
 .cart-item td button {
   margin: 10px 10px;
 }
