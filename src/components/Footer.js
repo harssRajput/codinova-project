@@ -1,6 +1,6 @@
 function Footer(props) {
 
-  const {totalQty} = props;
+  const {totalQty, onCancelAll} = props;
   return (
     <table className="footer">
       <thead></thead>
@@ -36,7 +36,8 @@ function Footer(props) {
       <tfoot>
         <tr>
           <td className="left">
-            <button>CANCEL ALL</button>
+            <button
+            onClick={onCancelAll}>CANCEL ALL</button>
           </td>
           <td className="right">
             <button>PROCESS ALL</button>

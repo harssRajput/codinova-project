@@ -14,21 +14,28 @@ class Cart extends React.Component {
         newData["qty"] = 1;
         return newData;
       }),
-      totalQty:0,
+      totalQty: 0,
     };
   }
 
-  handleTotalQuantity = () =>{
-    const{products} = this.state;
+  handleCancelAll = () => {
+    const { products, totalQty } = this.state;
+    this.setState({
+      products: [],
+      totalQty: 0,
+    });
+  };
 
-    let totalQty=0;
-    for(let product of products)
-    {
+  handleTotalQuantity = () => {
+    const { products } = this.state;
+
+    let totalQty = 0;
+    for (let product of products) {
       totalQty += product.qty;
     }
 
-    this.setState({totalQty: totalQty});
-  }
+    this.setState({ totalQty: totalQty });
+  };
 
   handleIncreaseQuantity = (product) => {
     // console.log("it's working");
@@ -37,10 +44,10 @@ class Cart extends React.Component {
 
     this.setState({
       products: this.state.products,
+      totalQty: this.state.totalQty + 1,
     });
-
-    this.handleTotalQuantity();
   };
+
   handleDecreaseQuantity = (product) => {
     // console.log("it's working");
     const index = this.state.products.indexOf(product);
@@ -53,10 +60,8 @@ class Cart extends React.Component {
 
     this.setState({
       products: this.state.products,
+      totalQty: this.state.totalQty - 1,
     });
-
-    this.handleTotalQuantity();
-
   };
 
   handleDeleteItem = (prdt) => {
@@ -67,13 +72,13 @@ class Cart extends React.Component {
     // console.log("it's working", item);
     this.setState({
       products: item,
+      totalQty: this.state.totalQty - prdt.qty,
     });
-
-    this.handleTotalQuantity();
   };
 
   render() {
-    console.log("products ", this.state);
+    // console.log("products ", this.state);
+    // this.handleTotalQuantity();
     const { products } = this.state;
     return (
       <div className="cart">
@@ -103,26 +108,31 @@ class Cart extends React.Component {
           </table>
         </div>
         <div className="items">
-          <table>
-            <thead></thead>
-            <tbody>
-              {products.map((product, index) => {
-                return (
-                  <CartItem
-                    product={product}
-                    key={index}
-                    onIncreaseQuantity={this.handleIncreaseQuantity}
-                    onDecreaseQuantity={this.handleDecreaseQuantity}
-                    onDeleteItem={this.handleDeleteItem}
-                  />
-                );
-              })}
-            </tbody>
-            <tfoot></tfoot>
-          </table>
+          {products.length === 0 ? (
+            <div className="empty-cart">There are no products</div>
+          ) : (
+            <table>
+              <thead></thead>
+              <tbody>
+                {products.map((product, index) => {
+                  return (
+                    <CartItem
+                      product={product}
+                      key={index}
+                      onIncreaseQuantity={this.handleIncreaseQuantity}
+                      onDecreaseQuantity={this.handleDecreaseQuantity}
+                      onDeleteItem={this.handleDeleteItem}
+                    />
+                  );
+                })}
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+          )}
         </div>
         <Footer
           totalQty={this.state.totalQty}
+          onCancelAll={this.handleCancelAll}
         />
       </div>
     );
