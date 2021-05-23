@@ -1,22 +1,16 @@
 import Product from './Product';
 
-function Products() {
+function Products(props) {
+  const {products} = props;
     return (
       <div className="products">
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
+        {products.map((product) =>{
+          return (
+            <Product
+            product={product}
+            />
+          );
+        })}
       </div>
     );
   }

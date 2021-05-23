@@ -31,7 +31,6 @@ code {
   width: 50vw;
   height: 100%;
   min-height: 500px;
-  border: 1px solid black;
   display: flex;
   align-content: flex-start;
   flex: 0 0 auto;
@@ -43,16 +42,6 @@ code {
     inset rgb(217, 224, 224) 0 10px 10px 3px;
 }
 
-.product {
-  color: rgb(221, 28, 28);
-  background-color: black;
-  height: 90px;
-  width: 90px;
-  margin: 8px;
-  border-radius: 8px;
-  box-shadow: rgb(233, 225, 225) 0 0 3px, inset rgb(156, 156, 156) 0 0 3px;
-}
-
 .main {
   display: flex;
   flex: 1 1 auto;
@@ -60,6 +49,8 @@ code {
 
 .cart .items {
   min-height: 300px;
+  overflow-y: scroll;
+  max-height: 50vh;
 }
 
 .cart .items table {
@@ -223,4 +214,14 @@ code {
   font-size: 30px;
   border-radius: 25px;
   box-shadow: rgb(155, 158, 160) 0 10px 10px 5px;
+}
+
+.product {
+  /* color: rgb(221, 28, 28); */
+  /* background-color: black; */
+  height: 90px;
+  width: 90px;
+  margin: 8px;
+  border-radius: 8px;
+  box-shadow: rgb(233, 225, 225) 0 0 3px, inset rgb(156, 156, 156) 0 0 3px;
 }
