@@ -1,4 +1,6 @@
-function Footer() {
+function Footer(props) {
+
+  const {totalQty} = props;
   return (
     <table className="footer">
       <thead></thead>
@@ -7,7 +9,7 @@ function Footer() {
           <td className="left">SubTotal</td>
           <td className="right">
             <span>0.000EUR</span>
-            <span>0 items</span>
+            <span>{totalQty} items</span>
           </td>
         </tr>
         <tr className="VAT-tax footer-child">

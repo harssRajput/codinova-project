@@ -14,7 +14,20 @@ class Cart extends React.Component {
         newData["qty"] = 1;
         return newData;
       }),
+      totalQty:0,
     };
+  }
+
+  handleTotalQuantity = () =>{
+    const{products} = this.state;
+
+    let totalQty=0;
+    for(let product of products)
+    {
+      totalQty += product.qty;
+    }
+
+    this.setState({totalQty: totalQty});
   }
 
   handleIncreaseQuantity = (product) => {
@@ -25,6 +38,8 @@ class Cart extends React.Component {
     this.setState({
       products: this.state.products,
     });
+
+    this.handleTotalQuantity();
   };
   handleDecreaseQuantity = (product) => {
     // console.log("it's working");
@@ -39,7 +54,11 @@ class Cart extends React.Component {
     this.setState({
       products: this.state.products,
     });
+
+    this.handleTotalQuantity();
+
   };
+
   handleDeleteItem = (prdt) => {
     const item = this.state.products.filter((product) => {
       return prdt !== product;
@@ -49,6 +68,8 @@ class Cart extends React.Component {
     this.setState({
       products: item,
     });
+
+    this.handleTotalQuantity();
   };
 
   render() {
@@ -100,7 +121,9 @@ class Cart extends React.Component {
             <tfoot></tfoot>
           </table>
         </div>
-        <Footer />
+        <Footer
+          totalQty={this.state.totalQty}
+        />
       </div>
     );
   }
